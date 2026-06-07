@@ -1,5 +1,8 @@
 {
   "name": "logging-middleware",
   "version": "1.0.0",
-  "main": "index.js"
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Testing logging middleware\""
+  }
 }
