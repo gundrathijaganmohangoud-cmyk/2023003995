@@ -8,8 +8,8 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 // In-memory store for credentials
-let clientID = process.env.CLIENT_ID || null;
-let clientSecret = process.env.CLIENT_SECRET || null;
+let clientID = "e4541451-1be0-4758-a3c8-4ab6589fdc39";
+let clientSecret = "kuaFtBDvhZkMUHNF";
 let accessToken = null;
 
 // Basic logger
@@ -39,7 +39,14 @@ app.post('/api/authenticate', async (req, res) => {
     return res.status(400).json({ message: 'Please register first.' });
   }
   try {
-    const response = await axios.post('http://4.224.186.213/evaluation-service/auth', { clientID, clientSecret });
+    const response = await axios.post('http://4.224.186.213/evaluation-service/auth', {
+      email: "jgundrat@gitam.in",
+      name: "JAGAN MOHAN GOUD",
+      rollNo: "2023003995",
+      accessCode: "wgKtgZ",
+      clientID,
+      clientSecret
+    });
     accessToken = response.data.access_token;
     log('info', 'Authentication successful.');
     res.status(200).json(response.data);
