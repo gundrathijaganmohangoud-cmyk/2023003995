@@ -8,8 +8,8 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 // In-memory store for credentials
-let clientID = null;
-let clientSecret = null;
+let clientID = process.env.CLIENT_ID || null;
+let clientSecret = process.env.CLIENT_SECRET || null;
 let accessToken = null;
 
 // Basic logger
